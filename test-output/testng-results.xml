@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="14167" started-at="2018-04-18T20:47:07Z" finished-at="2018-04-18T20:47:21Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="14167" started-at="2018-04-18T20:47:07Z" finished-at="2018-04-18T20:47:21Z">
+      <class name="tests.SearchTest">
+        <test-method status="PASS" signature="SetUp()[pri:0, instance:tests.SearchTest@66d1af89]" name="SetUp" is-config="true" duration-ms="5822" started-at="2018-04-18T20:47:07Z" finished-at="2018-04-18T20:47:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetUp -->
+        <test-method status="PASS" signature="InitializePageObjects()[pri:0, instance:tests.SearchTest@66d1af89]" name="InitializePageObjects" is-config="true" duration-ms="15" started-at="2018-04-18T20:47:13Z" finished-at="2018-04-18T20:47:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InitializePageObjects -->
+        <test-method status="PASS" signature="SearchforProperty()[pri:0, instance:tests.SearchTest@66d1af89]" name="SearchforProperty" duration-ms="7646" started-at="2018-04-18T20:47:13Z" finished-at="2018-04-18T20:47:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SearchforProperty -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.SearchTest@66d1af89]" name="tearDown" is-config="true" duration-ms="674" started-at="2018-04-18T20:47:21Z" finished-at="2018-04-18T20:47:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.SearchTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
