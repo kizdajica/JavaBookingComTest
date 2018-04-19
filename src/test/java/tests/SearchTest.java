@@ -55,6 +55,8 @@ public class SearchTest extends BaseTest{
 		
         // Loop through the list of properties and find the first property that matches the desired conditions
 		for(WebElement property : listOfProperties) {
+            // Find the first hotel with a review mark of higher than ‘8.0’ and	a price under ‘200’ EUR.
+            // If any hotel is sold out, catch the NoSuchElementException and log the hotel's name and the message that it is sold out.
 			try {
                 // Find the price and the score of the hotel
 				sPriceString = property.findElement(sTotalPrice).getText();

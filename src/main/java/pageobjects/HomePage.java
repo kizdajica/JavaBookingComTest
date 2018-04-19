@@ -64,9 +64,14 @@ public class HomePage {
 		Select ageNumber = new Select(age);
 		ageNumber.selectByValue(row[3]);
 		
-        // "I'm traveling for work" chekcbox disabled due to the fact
-        // that the alternative Booking.com page style doesn't have this checkbox
-		//work.click();
+        // Since "I'm traveling for work" checkbox is missing on the new booking.com home page layout,
+        // possible exception is caught and message logged
+		try {
+		work.click();
+		} catch (NoSuchElementException e) {
+            // If the booking.com home page is displayed using the new layout, log the message
+			System.out.println("New Home Page layout displayed without the work checkbox.");
+		}
 		
         // 4.Click on ‘Search’ button
 		search.click();
