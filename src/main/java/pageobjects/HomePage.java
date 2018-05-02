@@ -3,6 +3,8 @@ package pageobjects;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -36,10 +38,16 @@ public class HomePage {
 	public WebElement age;
 	
 	@FindBy(how=How.NAME, using = "sb_travel_purpose")
-	public WebElement work;
+	public WebElement oldWork;
+	
+	@FindBy(how=How.CLASS_NAME, using = "bui-checkbox__label")
+	public WebElement newWork;
 	
 	@FindBy(how=How.CLASS_NAME, using = "sb-searchbox__button  ")
 	public WebElement search;
+	
+	@FindBy(how=How.CSS, using = "[data-visible = 'accommodation']")
+	public WebElement adultsChildren;
 	
 	public void FindDealsForAnySeason(String[] row) {
         // 3. Complete property search details as follows:
@@ -55,8 +63,26 @@ public class HomePage {
 		checkIn.sendKeys(lastDay);
 		String firstDay = GetFirstDayOfNextMonth();
 		checkOut.sendKeys(firstDay);
-		Select numberOfRooms = new Select(rooms);
-		numberOfRooms.selectByValue(row[1]);
+		
+		// Since "Number of rooms" element is missing on the new booking.com home page layout,
+        // possible exception is caught and message logged
+		try {
+			Select numberOfRooms = new Select(rooms);
+			numberOfRooms.selectByValue(row[1]);
+		} catch (NoSuchElementException e) {
+			// If the booking.com home page is displayed using the new layout, log the message
+			System.out.println("New Home Page layout displayed without the rooms element.");
+		}
+		
+		// If the booking.com home page is displayed using the new layout,
+        // first click on the adults-child element to open dropdown
+		try {
+			adultsChildren.click();
+		} catch (NoSuchElementException e) {
+			// If the booking.com home page is displayed using the old layout, log the message
+			System.out.println("Old Home Page layout displayed.");
+		}
+		
 		Select numberOfAdults = new Select(adults);
 		numberOfAdults.selectByValue(row[2]);
 		Select numberOfChildren = new Select(children);
@@ -64,13 +90,12 @@ public class HomePage {
 		Select ageNumber = new Select(age);
 		ageNumber.selectByValue(row[3]);
 		
-        // Since "I'm traveling for work" checkbox is missing on the new booking.com home page layout,
-        // possible exception is caught and message logged
+		// Since it is currently not possible to find work element by the same locator on different booking.com home page layouts,
+        // first try the old home page locator and then the new home page locator
 		try {
-		work.click();
-		} catch (NoSuchElementException e) {
-            // If the booking.com home page is displayed using the new layout, log the message
-			System.out.println("New Home Page layout displayed without the work checkbox.");
+			oldWork.click();
+		} catch (ElementNotVisibleException e) {
+            newWork.click();
 		}
 		
         // 4.Click on ‘Search’ button
