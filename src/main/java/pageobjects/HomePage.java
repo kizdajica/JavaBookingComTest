@@ -116,16 +116,17 @@ public class HomePage {
 
 	// Return the last day of the current month in needed form
 	public String getLastDayOfCurrentMonth() {
-		LocalDate today = LocalDate.now();
-		LocalDate firstOfNextMonth = LocalDate.of(today.getYear(), today.getMonth(), 1).plusMonths(1);
-		LocalDate lastDay = firstOfNextMonth.minusDays(1);
-		return lastDay.format(DateTimeFormatter.ofPattern("MMddyyyy"));
+		return findFirstDayOfNextMonth().minusDays(1).format(DateTimeFormatter.ofPattern("MMddyyyy"));
 	}
 
 	// Return the first day of the next month in needed form
 	public String getFirstDayOfNextMonth() {
+		return findFirstDayOfNextMonth().format(DateTimeFormatter.ofPattern("MMddyyyy"));
+	}
+	
+	// Find the first day of the next month
+	public LocalDate findFirstDayOfNextMonth() {
 		LocalDate today = LocalDate.now();
-		LocalDate firstOfNextMonth = LocalDate.of(today.getYear(), today.getMonth(), 1).plusMonths(1);
-		return firstOfNextMonth.format(DateTimeFormatter.ofPattern("MMddyyyy"));
+		return LocalDate.of(today.getYear(), today.getMonth(), 1).plusMonths(1);
 	}
 }

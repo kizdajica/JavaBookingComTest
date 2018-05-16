@@ -5,10 +5,10 @@
     <classes>
       <class name="tests.SearchTest">
         <methods>
-          <include name="InitializePageObjects"/>
-          <include name="SetUp"/>
+          <include name="initializePageObjects"/>
+          <include name="setUp"/>
+          <include name="searchforProperty"/>
           <include name="tearDown"/>
-          <include name="SearchforProperty"/>
         </methods>
       </class> <!-- tests.SearchTest -->
     </classes>
