@@ -6,29 +6,36 @@ import org.openqa.selenium.support.How;
 
 /**
  * This class models the Page Header and its objects
+ * 
  * @author Zoran Dragovic
  *
  */
 public class PageHeader {
-	@FindBy(how=How.CLASS_NAME, using = "long_currency_text")
+	@FindBy(how = How.CLASS_NAME, using = "long_currency_text")
 	public WebElement currency;
-	
-	@FindBy(how=How.CLASS_NAME, using = "currency_EUR")
+
+	@FindBy(how = How.CLASS_NAME, using = "currency_EUR")
 	public WebElement currencyType;
-	
-	@FindBy(how=How.CLASS_NAME, using = "uc_language")
+
+	@FindBy(how = How.CLASS_NAME, using = "uc_language")
 	public WebElement language;
-	
-	@FindBy(how=How.CLASS_NAME, using = "lang_en-us")
+
+	@FindBy(how = How.CLASS_NAME, using = "lang_en-us")
 	public WebElement languageType;
-	
-    // 2. Choose:
-    //  Currency: ‘Euro’
-    //  Language: ‘English(US)’
+
+	/**
+	 * This method sets the desired currency and language
+	 * 
+	 * @throws InterruptedException
+	 */
 	public void SetCurrencyAndLanguage() throws InterruptedException {
+		// 2. Choose:
+		// Currency: ‘Euro’
 		currency.click();
 		Thread.sleep(500);
 		currencyType.click();
+
+		// Language: ‘English(US)’
 		language.click();
 		languageType.click();
 	}
