@@ -28,7 +28,7 @@ public class PageHeader {
 	 * 
 	 * @throws InterruptedException
 	 */
-	public void SetCurrencyAndLanguage() throws InterruptedException {
+	public void setCurrencyAndLanguage() throws InterruptedException {
 		// 2. Choose:
 		// Currency: ‘Euro’
 		currency.click();

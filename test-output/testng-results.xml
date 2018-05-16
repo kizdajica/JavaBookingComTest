@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="15437" started-at="2018-05-16T08:45:51Z" finished-at="2018-05-16T08:46:06Z">
+  <suite name="Default suite" duration-ms="16019" started-at="2018-05-16T10:58:32Z" finished-at="2018-05-16T10:58:48Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="15437" started-at="2018-05-16T08:45:51Z" finished-at="2018-05-16T08:46:06Z">
+    <test name="Default test" duration-ms="16019" started-at="2018-05-16T10:58:32Z" finished-at="2018-05-16T10:58:48Z">
       <class name="tests.SearchTest">
-        <test-method status="PASS" signature="SetUp()[pri:0, instance:tests.SearchTest@a38d7a3]" name="SetUp" is-config="true" duration-ms="6200" started-at="2018-05-16T08:45:51Z" finished-at="2018-05-16T08:45:57Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.SearchTest@a38d7a3]" name="setUp" is-config="true" duration-ms="6225" started-at="2018-05-16T10:58:32Z" finished-at="2018-05-16T10:58:38Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SetUp -->
-        <test-method status="PASS" signature="InitializePageObjects()[pri:0, instance:tests.SearchTest@a38d7a3]" name="InitializePageObjects" is-config="true" duration-ms="27" started-at="2018-05-16T08:45:57Z" finished-at="2018-05-16T08:45:57Z">
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="initializePageObjects()[pri:0, instance:tests.SearchTest@a38d7a3]" name="initializePageObjects" is-config="true" duration-ms="32" started-at="2018-05-16T10:58:38Z" finished-at="2018-05-16T10:58:38Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- InitializePageObjects -->
-        <test-method status="PASS" signature="SearchforProperty()[pri:0, instance:tests.SearchTest@a38d7a3]" name="SearchforProperty" duration-ms="8547" started-at="2018-05-16T08:45:57Z" finished-at="2018-05-16T08:46:05Z">
+        </test-method> <!-- initializePageObjects -->
+        <test-method status="PASS" signature="searchforProperty()[pri:0, instance:tests.SearchTest@a38d7a3]" name="searchforProperty" duration-ms="8987" started-at="2018-05-16T10:58:38Z" finished-at="2018-05-16T10:58:47Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SearchforProperty -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.SearchTest@a38d7a3]" name="tearDown" is-config="true" duration-ms="644" started-at="2018-05-16T08:46:05Z" finished-at="2018-05-16T08:46:06Z">
+        </test-method> <!-- searchforProperty -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.SearchTest@a38d7a3]" name="tearDown" is-config="true" duration-ms="753" started-at="2018-05-16T10:58:47Z" finished-at="2018-05-16T10:58:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

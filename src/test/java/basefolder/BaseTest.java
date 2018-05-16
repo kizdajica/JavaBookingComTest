@@ -23,7 +23,7 @@ public class BaseTest {
 
 	// 1. Open https://www.booking.com/
 	@BeforeClass
-	public void SetUp() {
+	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", "src/test/resources/Data/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -45,7 +45,7 @@ public class BaseTest {
 	 * @param delimiter
 	 * @return
 	 */
-	public String[] ParseCsv(String file, String delimiter) {
+	public String[] parseCsv(String file, String delimiter) {
 		String line = "";
 		String[] fields = null;
 

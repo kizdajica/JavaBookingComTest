@@ -54,8 +54,9 @@ public class HomePage {
 	 * This method performs hotels search based on selected search criteria
 	 * 
 	 * @param row
+	 * @throws InterruptedException 
 	 */
-	public void FindDealsForAnySeason(String[] row) {
+	public void findDealsForAnySeason(String[] row) throws InterruptedException {
 		// 3. Complete property search details as follows:
 		// Destination: Málaga, Andalucía, Spain
 		// Check -in: last day of current month
@@ -65,9 +66,10 @@ public class HomePage {
 		// 2 rooms
 		// I'm traveling for work: check
 		destination.sendKeys(row[0]);
-		String lastDay = GetLastDayOfCurrentMonth();
+		String lastDay = getLastDayOfCurrentMonth();
+		Thread.sleep(500);
 		checkIn.sendKeys(lastDay);
-		String firstDay = GetFirstDayOfNextMonth();
+		String firstDay = getFirstDayOfNextMonth();
 		checkOut.sendKeys(firstDay);
 
 		// Since "Number of rooms" element is missing on the new booking.com home page
@@ -113,7 +115,7 @@ public class HomePage {
 	}
 
 	// Return the last day of the current month in needed form
-	public String GetLastDayOfCurrentMonth() {
+	public String getLastDayOfCurrentMonth() {
 		LocalDate today = LocalDate.now();
 		LocalDate firstOfNextMonth = LocalDate.of(today.getYear(), today.getMonth(), 1).plusMonths(1);
 		LocalDate lastDay = firstOfNextMonth.minusDays(1);
@@ -121,7 +123,7 @@ public class HomePage {
 	}
 
 	// Return the first day of the next month in needed form
-	public String GetFirstDayOfNextMonth() {
+	public String getFirstDayOfNextMonth() {
 		LocalDate today = LocalDate.now();
 		LocalDate firstOfNextMonth = LocalDate.of(today.getYear(), today.getMonth(), 1).plusMonths(1);
 		return firstOfNextMonth.format(DateTimeFormatter.ofPattern("MMddyyyy"));
